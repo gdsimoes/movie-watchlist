@@ -1,3 +1,11 @@
-
+/************
+* Variables
+************/
+:root {
+  --icon-change: blue;
+  --icon-search: turquoise;
+  --icon-film: #dfdddd;
+  --icon-star: #fec654;
+}
 
 /*# sourceMappingURL=style.css.map */

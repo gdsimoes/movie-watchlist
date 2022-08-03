@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Guilherme Dias Simoes" />
+        <meta
+            name="description"
+            content="Solution to the 'Movie Watchlist' challenge on Scrimba"
+        />
+        <link
+            rel="shortcut icon"
+            href="images/favicon.svg"
+            type="image/x-icon"
+        />
+
+        <!-- CSS Remedy: https://github.com/jensimmons/cssremedy -->
+        <link rel="stylesheet" href="styles/remedy.css" />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+            rel="stylesheet"
+        />
+
+        <title>Movie Watchlist - Find your film</title>
+
+        <link rel="stylesheet" href="styles/style.css" />
+        <script src="scripts/main.js" type="module"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Find your film</h1>
+            <a href="watchlist.html">My Watchlist</a>
+        </header>
+
+        <main>
+            <form action="https://www.omdbapi.com/" method="get">
+                <input
+                    type="search"
+                    name="s"
+                    placeholder="Search for a movie"
+                />
+                <button type="submit">Search</button>
+            </form>
+            <section>
+                <h2>Start exploring</h2>
+                <svg>
+                    <use xlink:href="images/icons.svg#film"></use>
+                </svg>
+            </section>
+        </main>
+
+        <!-- <svg>
+            <use xlink:href="images/icons.svg#minus"></use>
+        </svg>
+        <svg>
+            <use xlink:href="images/icons.svg#plus"></use>
+        </svg>
+        <svg>
+            <use xlink:href="images/icons.svg#search"></use>
+        </svg>
+        <svg>
+            <use xlink:href="images/icons.svg#film"></use>
+        </svg>
+        <svg>
+            <use xlink:href="images/icons.svg#star"></use>
+        </svg> -->
+    </body>
+</html>
