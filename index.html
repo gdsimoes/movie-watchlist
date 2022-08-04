@@ -31,27 +31,31 @@
         <script src="scripts/main.js" type="module"></script>
     </head>
     <body>
-        <header>
-            <h1>Find your film</h1>
-            <a href="watchlist.html">My Watchlist</a>
-        </header>
+        <div class="container">
+            <div class="header-wrapper">
+                <header>
+                    <h1>Find your film</h1>
+                    <a href="watchlist.html">My Watchlist</a>
+                </header>
+            </div>
 
-        <main>
-            <form action="https://www.omdbapi.com/" method="get">
-                <input
-                    type="search"
-                    name="s"
-                    placeholder="Search for a movie"
-                />
-                <button type="submit">Search</button>
-            </form>
-            <section>
-                <h2>Start exploring</h2>
-                <svg>
-                    <use xlink:href="images/icons.svg#film"></use>
-                </svg>
-            </section>
-        </main>
+            <main>
+                <form action="https://www.omdbapi.com/" method="get">
+                    <input
+                        type="search"
+                        name="s"
+                        placeholder="Search for a movie"
+                    />
+                    <button type="submit">Search</button>
+                </form>
+                <section>
+                    <h2>Start exploring</h2>
+                    <svg>
+                        <use xlink:href="images/icons.svg#film"></use>
+                    </svg>
+                </section>
+            </main>
+        </div>
 
         <!-- <svg>
             <use xlink:href="images/icons.svg#minus"></use>

@@ -2,53 +2,113 @@
 * Variables
 ************/
 
+$body-bg: #1c1c1c;
+$header-bg: #0e0e0e;
+
+:root {
+    --icon-star: #fec654;
+}
+
+// Light mode
 :root {
     --icon-change: blue;
     --icon-search: turquoise;
     --icon-film: #dfdddd;
-    --icon-star: #fec654;
+
+    --main-bg: white;
+    --header-border: 1px solid #000000;
 }
 
-// .minus {
-//     mask: url(../images/minus.svg);
-// }
+// Dark mode
+@media (prefers-color-scheme: dark) {
+    :root {
+        --icon-change: blue;
+        --icon-search: turquoise;
+        --icon-film: #dfdddd;
 
-// .plus {
-//     mask: url(../images/plus.svg);
-// }
+        --main-bg: #121212;
+        --header-border: none;
+    }
+}
 
-// .search {
-//     mask: url(../images/search.svg);
-// }
+/*************
+* Typography
+*************/
 
-// .icon {
-//     display: inline-block;
-//     width: 70px;
-//     height: 70px;
-//     background: black;
-//     mask-size: cover;
-//     color: pink;
-// }
+html {
+    font-family: "Inter", sans-serif;
+}
 
-// .icon:hover,
-// .icon:focus {
-//     background: red;
-// }
+header {
+    h1 {
+        color: white;
 
-// svg {
-//     color: turquoise;
-// }
+        font-weight: 800;
+        font-size: 42.7947px;
+        line-height: 24px;
+        letter-spacing: -0.045em;
+    }
 
-// // object {
-// //     color: azure;
-// //     fill: azure;
-// // }
+    a {
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+    }
 
-// // div {
-// //     color: blue;
-// //     // background-color: blueviolet;
-// // }
+    a:hover {
+        text-decoration: underline;
+    }
+}
 
-// body {
-//     background-color: red;
-// }
+/*********
+* Layout
+*********/
+
+body {
+    background-color: $body-bg;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 550px;
+    height: 779px;
+}
+
+.header-wrapper {
+    background-color: $header-bg;
+    position: relative;
+}
+
+.header-wrapper::before {
+    content: "";
+    background-image: url(../images/bg-small.jpg);
+    background-size: cover;
+    background-position: 0 -158px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    opacity: 0.2;
+}
+
+header {
+    height: 208px;
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 42px;
+    padding-right: 46px;
+}
+
+main {
+    background-color: var(--main-bg);
+}
