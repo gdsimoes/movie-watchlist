@@ -12,7 +12,6 @@ $header-bg: #0e0e0e;
 // Light mode
 :root {
     --icon-change: blue;
-    --icon-search: turquoise;
     --icon-film: #dfdddd;
 
     --main-bg: white;
@@ -28,8 +27,7 @@ $header-bg: #0e0e0e;
 @media (prefers-color-scheme: dark) {
     :root {
         --icon-change: blue;
-        --icon-search: turquoise;
-        --icon-film: #dfdddd;
+        --icon-film: #2e2e2f;
 
         --main-bg: #121212;
         --header-border: none;
@@ -94,6 +92,11 @@ form {
     button {
         color: var(--btn-color);
     }
+}
+
+.movies-start h2 {
+    color: var(--icon-film);
+    font-size: 18px;
 }
 
 /*********
@@ -208,11 +211,32 @@ form {
 main {
     background-color: var(--main-bg);
     position: relative;
-    padding-top: 212px;
+
     height: 571px;
+    padding-top: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
 
-h2 {
-    color: white;
-    margin: 0;
+#movies {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .icon-film {
+        width: 70px;
+        height: 62px;
+    }
+}
+
+.movies-start {
+    height: 80%;
+
+    h2 {
+        margin-top: 8.75px;
+        order: 1;
+    }
 }
