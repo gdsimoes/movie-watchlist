@@ -11,6 +11,11 @@
   --icon-film: #dfdddd;
   --main-bg: white;
   --header-border: 1px solid #000000;
+  --form-border: 1px solid #d1d5db;
+  --search-bg: white;
+  --btn-color: #374151;
+  --btn-bg: #f9fafb;
+  --search-color: #6b7280;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,6 +25,11 @@
     --icon-film: #dfdddd;
     --main-bg: #121212;
     --header-border: none;
+    --search-bg: #2e2e2f;
+    --form-border: none;
+    --btn-color: white;
+    --btn-bg: #4b4b4b;
+    --search-color: #a5a5a5;
   }
 }
 /*************
@@ -27,6 +37,13 @@
 *************/
 html {
   font-family: "Inter", sans-serif;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
 }
 
 header h1 {
@@ -45,6 +62,19 @@ header a {
 }
 header a:hover {
   text-decoration: underline;
+}
+
+form {
+  font-weight: 500;
+  font-size: 14px;
+}
+form input[type=search],
+form input[type=search]::placeholder {
+  color: var(--search-color);
+  opacity: 1;
+}
+form button {
+  color: var(--btn-color);
 }
 
 /*********
@@ -90,9 +120,63 @@ header {
   padding-left: 42px;
   padding-right: 46px;
 }
+header h1 {
+  position: relative;
+  top: 2px;
+}
+header a {
+  position: relative;
+  top: 6px;
+}
+
+form {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  border: var(--form-border);
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translate(-50%, -50%);
+}
+form input[type=search] {
+  border: none;
+  width: 341px;
+  height: 36px;
+  padding-left: 41px;
+  background-color: var(--search-bg);
+  background-image: url(../images/search.png);
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: 15px center;
+}
+form button {
+  width: 119px;
+  height: 36px;
+  background-color: var(--btn-bg);
+  border: none;
+  border-left: var(--form-border);
+}
+form button:hover {
+  filter: brightness(0.95);
+}
+form button:active {
+  filter: brightness(0.9);
+}
 
 main {
   background-color: var(--main-bg);
+  position: relative;
+  padding-top: 212px;
+  height: 571px;
+}
+
+h2 {
+  color: white;
+  margin: 0;
 }
 
 /*# sourceMappingURL=style.css.map */
