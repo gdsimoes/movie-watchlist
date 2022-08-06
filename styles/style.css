@@ -192,7 +192,9 @@ main {
 }
 
 .movies-start {
+  width: 320px;
   height: 80%;
+  text-align: center;
 }
 .movies-start h2 {
   margin-top: 8.75px;

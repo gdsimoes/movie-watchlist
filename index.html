@@ -28,7 +28,7 @@
         <title>Movie Watchlist - Find your film</title>
 
         <link rel="stylesheet" href="styles/style.css" />
-        <script src="scripts/main.js" type="module"></script>
+        <script src="scripts/search.js" type="module"></script>
     </head>
     <body>
         <div class="container">
@@ -45,8 +45,9 @@
                         type="search"
                         name="s"
                         placeholder="Search for a movie"
+                        autocomplete="off"
                     />
-                    <button type="submit">Search</button>
+                    <button id="btn-search" type="submit">Search</button>
                 </form>
                 <section id="movies" class="movies-start">
                     <h2>Start exploring</h2>
