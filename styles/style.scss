@@ -11,7 +11,7 @@ $header-bg: #0e0e0e;
 
 // Light mode
 :root {
-    --icon-change: blue;
+    --icon-change: #111827;
     --icon-film: #dfdddd;
 
     --main-bg: white;
@@ -21,12 +21,16 @@ $header-bg: #0e0e0e;
     --btn-color: #374151;
     --btn-bg: #f9fafb;
     --search-color: #6b7280;
+    --movie-h1: black;
+    --movie-color: #111827;
+    --movie-plot: #6b7280;
+    --movie-border: #e5e7eb;
 }
 
 // Dark mode
 @media (prefers-color-scheme: dark) {
     :root {
-        --icon-change: blue;
+        --icon-change: white;
         --icon-film: #2e2e2f;
 
         --main-bg: #121212;
@@ -36,6 +40,10 @@ $header-bg: #0e0e0e;
         --btn-color: white;
         --btn-bg: #4b4b4b;
         --search-color: #a5a5a5;
+        --movie-h1: white;
+        --movie-color: white;
+        --movie-plot: #a5a5a5;
+        --movie-border: #2c2c2c;
     }
 }
 
@@ -97,6 +105,22 @@ form {
 .movies-start h2 {
     color: var(--icon-film);
     font-size: 18px;
+}
+
+.movie {
+    font-size: 12px;
+    color: var(--movie-color);
+
+    h1 {
+        font-weight: 500;
+        font-size: 18px;
+        color: var(--movie-h1);
+    }
+
+    .plot {
+        color: var(--movie-plot);
+        font-size: 14px;
+    }
 }
 
 /*********
@@ -231,8 +255,12 @@ main {
 #movies {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+
+    width: 461px;
+    height: 531px;
+    overflow: scroll;
 
     .icon-film {
         width: 70px;
@@ -240,13 +268,82 @@ main {
     }
 }
 
-.movies-start {
+#movies.movies-start {
     width: 320px;
     height: 80%;
     text-align: center;
+    justify-content: center;
 
     h2 {
         margin-top: 8.75px;
         order: 1;
+    }
+}
+
+.movie {
+    width: 461px;
+    height: 195px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1.5px solid var(--movie-border);
+
+    h1,
+    p {
+        margin: 0;
+    }
+
+    img {
+        width: 99px;
+        height: 147.41px;
+        // Safeguard against nonstandard posters
+        object-fit: contain;
+    }
+
+    .info {
+        width: 342px;
+        height: 119px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .details {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+
+            svg {
+                width: 16px;
+                height: 16px;
+                display: inline-block;
+                transform: translateY(-1px);
+            }
+
+            button {
+                background-color: transparent;
+                border: none;
+                cursor: pointer;
+            }
+        }
+
+        .details > * {
+            margin-right: 15px;
+        }
+
+        .title {
+            display: flex;
+            align-items: center;
+
+            svg {
+                width: 13px;
+                height: 12px;
+                margin-left: 8px;
+                margin-right: 4px;
+            }
+        }
     }
 }

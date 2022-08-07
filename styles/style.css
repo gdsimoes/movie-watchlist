@@ -6,7 +6,7 @@
 }
 
 :root {
-  --icon-change: blue;
+  --icon-change: #111827;
   --icon-film: #dfdddd;
   --main-bg: white;
   --header-border: 1px solid #000000;
@@ -15,11 +15,15 @@
   --btn-color: #374151;
   --btn-bg: #f9fafb;
   --search-color: #6b7280;
+  --movie-h1: black;
+  --movie-color: #111827;
+  --movie-plot: #6b7280;
+  --movie-border: #e5e7eb;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --icon-change: blue;
+    --icon-change: white;
     --icon-film: #2e2e2f;
     --main-bg: #121212;
     --header-border: none;
@@ -28,6 +32,10 @@
     --btn-color: white;
     --btn-bg: #4b4b4b;
     --search-color: #a5a5a5;
+    --movie-h1: white;
+    --movie-color: white;
+    --movie-plot: #a5a5a5;
+    --movie-border: #2c2c2c;
   }
 }
 /*************
@@ -78,6 +86,20 @@ form button {
 .movies-start h2 {
   color: var(--icon-film);
   font-size: 18px;
+}
+
+.movie {
+  font-size: 12px;
+  color: var(--movie-color);
+}
+.movie h1 {
+  font-weight: 500;
+  font-size: 18px;
+  color: var(--movie-h1);
+}
+.movie .plot {
+  color: var(--movie-plot);
+  font-size: 14px;
 }
 
 /*********
@@ -183,22 +205,81 @@ main {
 #movies {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  width: 461px;
+  height: 531px;
+  overflow: scroll;
 }
 #movies .icon-film {
   width: 70px;
   height: 62px;
 }
 
-.movies-start {
+#movies.movies-start {
   width: 320px;
   height: 80%;
   text-align: center;
+  justify-content: center;
 }
-.movies-start h2 {
+#movies.movies-start h2 {
   margin-top: 8.75px;
   order: 1;
+}
+
+.movie {
+  width: 461px;
+  height: 195px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1.5px solid var(--movie-border);
+}
+.movie h1,
+.movie p {
+  margin: 0;
+}
+.movie img {
+  width: 99px;
+  height: 147.41px;
+  object-fit: contain;
+}
+.movie .info {
+  width: 342px;
+  height: 119px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.movie .info .details {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+.movie .info .details svg {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  transform: translateY(-1px);
+}
+.movie .info .details button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.movie .info .details > * {
+  margin-right: 15px;
+}
+.movie .info .title {
+  display: flex;
+  align-items: center;
+}
+.movie .info .title svg {
+  width: 13px;
+  height: 12px;
+  margin-left: 8px;
+  margin-right: 4px;
 }
 
 /*# sourceMappingURL=style.css.map */
