@@ -108,13 +108,16 @@ form button {
   font-size: 12px;
   color: var(--read-color);
 }
+.movie .plot button:hover {
+  text-decoration: underline;
+}
 
 /*********
 * Layout
 *********/
 body {
   background-color: #1c1c1c;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -123,6 +126,7 @@ body {
 .container {
   width: 550px;
   height: 779px;
+  flex-shrink: 0;
 }
 
 .header-wrapper {
