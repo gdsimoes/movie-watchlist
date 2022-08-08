@@ -25,6 +25,7 @@ $header-bg: #0e0e0e;
     --movie-color: #111827;
     --movie-plot: #6b7280;
     --movie-border: #e5e7eb;
+    --read-color: #272727;
 }
 
 // Dark mode
@@ -44,6 +45,7 @@ $header-bg: #0e0e0e;
         --movie-color: white;
         --movie-plot: #a5a5a5;
         --movie-border: #2c2c2c;
+        --read-color: white;
     }
 }
 
@@ -120,6 +122,12 @@ form {
     .plot {
         color: var(--movie-plot);
         font-size: 14px;
+        line-height: 20px;
+
+        button {
+            font-size: 12px;
+            color: var(--read-color);
+        }
     }
 }
 
@@ -282,17 +290,26 @@ main {
 
 .movie {
     width: 461px;
-    height: 195px;
+    min-height: 195px;
+    padding: 24px 0;
 
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    flex-shrink: 0;
+    flex-grow: 1;
 
     border-bottom: 1.5px solid var(--movie-border);
 
     h1,
     p {
         margin: 0;
+    }
+
+    button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
     }
 
     img {
@@ -304,17 +321,20 @@ main {
 
     .info {
         width: 342px;
-        height: 119px;
+        min-height: 119px;
+        margin-top: 14px;
 
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: flex-start;
 
         .details {
-            width: 100%;
+            width: 281px;
             display: flex;
+            justify-content: space-between;
             align-items: flex-start;
+            margin-bottom: 8px;
 
             svg {
                 width: 16px;
@@ -322,21 +342,12 @@ main {
                 display: inline-block;
                 transform: translateY(-1px);
             }
-
-            button {
-                background-color: transparent;
-                border: none;
-                cursor: pointer;
-            }
-        }
-
-        .details > * {
-            margin-right: 15px;
         }
 
         .title {
             display: flex;
             align-items: center;
+            margin-bottom: 11px;
 
             svg {
                 width: 13px;
@@ -345,5 +356,40 @@ main {
                 margin-right: 4px;
             }
         }
+
+        .plot button {
+            height: 20px;
+        }
+
+        // .plot {
+        //     height: 60px;
+        //     overflow: hidden;
+        // }
+
+        // .plot {
+        //     height: 52.5px;
+        //     // white-space: nowrap;
+        //     overflow: hidden;
+        //     text-overflow: ellipsis;
+        //     // // text-overflow: "Budega";
+        //     // display: -webkit-box;
+        //     // -webkit-line-clamp: 3; /* number of lines to show */
+        //     // // line-clamp: 3;
+        //     // -webkit-box-orient: vertical;
+        // }
+
+        // span {
+        //     float: right;
+        //     height: 100%;
+        //     display: flex;
+        //     align-items: flex-end;
+        //     shape-outside: inset(calc(100% - 23.5px) 0 0);
+        // }
+        // .read-more {
+        //     float: right;
+        //     height: 100%;
+        //     display: flex;
+        //     align-items: flex-end;
+        // }
     }
 }

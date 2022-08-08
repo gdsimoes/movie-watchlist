@@ -32,13 +32,12 @@ async function search(event) {
         moviesSection.replaceChildren(h2);
     } else {
         moviesSection.classList.remove("movies-start");
-        let moviesHtml = "";
+        moviesSection.replaceChildren();
         for (const movie of data.Search) {
-            moviesHtml += await createMovieArticle(movie.imdbID, "index");
+            await createMovieArticle(movie.imdbID, "index");
             // DEBUG
-            break;
+            // break;
         }
-        moviesSection.innerHTML = moviesHtml;
     }
 
     // console.log(data);
