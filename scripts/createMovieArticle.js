@@ -27,8 +27,8 @@ function readBtnHandler(event) {
 
 async function createMovieArticle(imdbID, page) {
     // DEBUG
-    const url = `${baseUrl}?apikey=${apikey}&i=${imdbID}&plot=full`;
-    // const url = `${baseUrl}?apikey=${apikey}&i=${imdbID}`;
+    // const url = `${baseUrl}?apikey=${apikey}&i=${imdbID}&plot=full`;
+    const url = `${baseUrl}?apikey=${apikey}&i=${imdbID}`;
     let data;
     try {
         const res = await fetch(url);
