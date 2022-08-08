@@ -16,7 +16,7 @@ function scalar() {
         container.style.transform = `scale(${scalar})`;
 
         // Fix zoom behavior in iOS Safari
-        input.style.fontSize = "16px";
+        // input.style.fontSize = "16px";
     } else {
         // For bigger screens it's best to leave some room on the sides
         // const ratioHeight =
