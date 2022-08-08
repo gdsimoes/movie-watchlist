@@ -32,3 +32,23 @@ function scalar() {
 
 window.addEventListener("resize", scalar);
 scalar();
+
+// Fix zoom behavior on Safari
+const input = document.querySelector("input");
+input.addEventListener("focus", () => {
+    document
+        .querySelector("meta[name=viewport]")
+        .setAttribute(
+            "content",
+            "width=device-width, initial-scale=1.0, maximum-scale=10.0"
+        );
+});
+
+input.addEventListener("blur", () => {
+    document
+        .querySelector("meta[name=viewport]")
+        .setAttribute(
+            "content",
+            "width=device-width, initial-scale=1.0, maximum-scale=1.0"
+        );
+});
