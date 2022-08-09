@@ -230,6 +230,7 @@ form {
         padding-left: 41px;
 
         // Search icon
+        -webkit-appearance: none;
         background-color: var(--search-bg);
         background-image: url(../images/search.png);
         background-size: 16px 16px;
