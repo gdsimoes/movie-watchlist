@@ -38,17 +38,9 @@ async function createMovieArticle(imdbID, page) {
         return "";
     }
 
-    const {
-        Title,
-        Runtime,
-        Genre,
-        Plot,
-        Poster,
-        Ratings: [{ Value }],
-    } = data;
+    const { Title, Runtime, Genre, Plot, Poster, Ratings } = data;
 
-    // console.log(Title, Runtime, Genre, Plot, Value);
-    // console.log("#######");
+    const Value = Ratings[0]?.Value ?? "N/A/";
 
     let iconID, buttonText;
     if (page === "index") {
@@ -69,7 +61,7 @@ async function createMovieArticle(imdbID, page) {
         <svg>
             <use xlink:href="images/icons.svg#star"></use>
         </svg>
-        ${Value.slice(0, Value.indexOf("/"))}
+        ${Value.slice(0, Value.lastIndexOf("/"))}
     </div>
     <div class="details">
         <p>${Runtime}</p>
@@ -91,7 +83,6 @@ async function createMovieArticle(imdbID, page) {
 
     // If the text is overflowing crop it and insert 'Read more' button
     const plot = article.querySelector(".plot");
-
     if (plot.scrollHeight > standardHeight) {
         const button = document.createElement("button");
         button.type = "button";
@@ -101,35 +92,23 @@ async function createMovieArticle(imdbID, page) {
         plot.append(button);
         button.click();
     }
-    console.log(plot.offsetHeight, plot.scrollHeight);
 
-    // return article;
-    //     `
-    // <article class="movie">
-    //     <img src="${Poster}" alt="Movie poster" />
-    //     <div class="info">
-    //         <div class="title">
-    //             <h1>${Title}</h1>
-    //             <svg>
-    //                 <use xlink:href="images/icons.svg#star"></use>
-    //             </svg>
-    //             ${Value.slice(0, Value.indexOf("/"))}
-    //         </div>
-    //         <div class="details">
-    //             <p>${Runtime}</p>
-    //             <p>${Genre}</p>
-    //             <button>
-    //                 <svg>
-    //                     <use xlink:href="images/icons.svg#${iconID}"></use>
-    //                 </svg>
-    //                 ${buttonText}
-    //             </button>
-    //         </div>
-    //         <p class="plot">${Plot}</p>
-    //     </div>
-    // </article>
-
-    //     `;
+    // Watchlist button handler
+    article
+        .querySelector(".details > button")
+        .addEventListener("click", (event) => {
+            if (page === "index") {
+                const listOfMovies =
+                    JSON.parse(localStorage.getItem("listOfMovies")) ?? [];
+                listOfMovies.push(imdbID);
+                localStorage.setItem(
+                    "listOfMovies",
+                    JSON.stringify(listOfMovies)
+                );
+            } else {
+                console.log("remove!");
+            }
+        });
 }
 
 export default createMovieArticle;
