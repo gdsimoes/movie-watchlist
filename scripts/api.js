@@ -30,12 +30,16 @@ export function watchlistInitial() {
 
 export function removeMovie(imdbID, movie) {
     movie.style.opacity = 0;
-    if (listOfMovies.size === 1) {
-        listOfMovies.clear();
-        watchlistInitial();
-    } else {
-        listOfMovies.delete(imdbID);
-        movie.remove();
-    }
-    updateLocalStorage(listOfMovies);
+    // Disable whole article
+    movie.style.pointerEvents = "none";
+    setTimeout(() => {
+        if (listOfMovies.size === 1) {
+            listOfMovies.clear();
+            watchlistInitial();
+        } else {
+            listOfMovies.delete(imdbID);
+            movie.remove();
+        }
+        updateLocalStorage(listOfMovies);
+    }, 500);
 }

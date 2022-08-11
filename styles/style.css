@@ -271,7 +271,7 @@ main {
   flex-grow: 1;
   border-bottom: 1.5px solid var(--movie-border);
   opacity: 1;
-  transition: opacity 250ms;
+  transition: opacity 500ms;
 }
 .movie h1,
 .movie p {
