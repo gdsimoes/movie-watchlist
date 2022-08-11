@@ -17,7 +17,6 @@ function readBtnHandler(event) {
         while (p.scrollHeight > standardHeight) {
             span.textContent = span.textContent.slice(0, -4) + "...";
         }
-        // console.log(p.scrollHeight);
     } else {
         p.style.position = "static";
         event.currentTarget.textContent = "Read less";

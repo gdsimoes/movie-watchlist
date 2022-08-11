@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="author" content="Guilherme Dias Simoes" />
+        <meta
+            name="description"
+            content="Solution to the 'Movie Watchlist' challenge on Scrimba"
+        />
+        <link
+            rel="shortcut icon"
+            href="images/favicon.svg"
+            type="image/x-icon"
+        />
+
+        <!-- CSS Remedy: https://github.com/jensimmons/cssremedy -->
+        <link rel="stylesheet" href="styles/remedy.css" />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+            rel="stylesheet"
+        />
+
+        <title>Movie Watchlist - Find your film</title>
+
+        <link rel="stylesheet" href="styles/style.css" />
+        <script src="scripts/scale.js" type="module"></script>
+        <script src="scripts/search.js" type="module"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header-wrapper">
+                <header>
+                    <h1>My Watchlist</h1>
+                    <a href="index.html">Search for movies</a>
+                </header>
+            </div>
+
+            <main>
+                <div class="movies-wrapper">
+                    <section id="movies" class="movies-start">
+                        <h2>Your watchlist is looking a little empty...</h2>
+                        <a href="index.html">
+                            <svg>
+                                <use xlink:href="images/icons.svg#plus"></use>
+                            </svg>
+                            Let's add some movies!</a
+                        >
+                    </section>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>

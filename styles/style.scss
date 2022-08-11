@@ -26,6 +26,7 @@ $header-bg: #0e0e0e;
     --movie-plot: #6b7280;
     --movie-border: #e5e7eb;
     --read-color: #272727;
+    --add-movies-color: #363636;
 }
 
 // Dark mode
@@ -46,6 +47,7 @@ $header-bg: #0e0e0e;
         --movie-plot: #a5a5a5;
         --movie-border: #2c2c2c;
         --read-color: white;
+        --add-movies-color: white;
     }
 }
 
@@ -104,9 +106,17 @@ form {
     }
 }
 
-.movies-start h2 {
-    color: var(--icon-film);
-    font-size: 18px;
+#movies.movies-start {
+    h2 {
+        color: var(--icon-film);
+        font-size: 18px;
+    }
+
+    a {
+        color: var(--add-movies-color);
+        font-size: 14px;
+        font-weight: 700;
+    }
 }
 
 .movie {
@@ -195,14 +205,6 @@ header {
     }
 }
 
-// input::placeholder {
-//     background-color: var(--search-bg);
-//     background-image: url(../images/search.png);
-//     background-size: 16px 16px;
-//     background-repeat: no-repeat;
-//     background-position: 15px center;
-// }
-
 form {
     position: absolute;
     top: 0;
@@ -290,14 +292,27 @@ main {
 }
 
 #movies.movies-start {
-    width: 320px;
+    width: 400px;
     height: 80%;
     text-align: center;
     justify-content: center;
 
+    svg {
+        order: -1;
+    }
+
     h2 {
         margin-top: 8.75px;
-        order: 1;
+    }
+
+    a {
+        text-decoration: none;
+
+        svg {
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+        }
     }
 }
 
@@ -373,36 +388,5 @@ main {
         .plot button {
             height: 20px;
         }
-
-        // .plot {
-        //     height: 60px;
-        //     overflow: hidden;
-        // }
-
-        // .plot {
-        //     height: 52.5px;
-        //     // white-space: nowrap;
-        //     overflow: hidden;
-        //     text-overflow: ellipsis;
-        //     // // text-overflow: "Budega";
-        //     // display: -webkit-box;
-        //     // -webkit-line-clamp: 3; /* number of lines to show */
-        //     // // line-clamp: 3;
-        //     // -webkit-box-orient: vertical;
-        // }
-
-        // span {
-        //     float: right;
-        //     height: 100%;
-        //     display: flex;
-        //     align-items: flex-end;
-        //     shape-outside: inset(calc(100% - 23.5px) 0 0);
-        // }
-        // .read-more {
-        //     float: right;
-        //     height: 100%;
-        //     display: flex;
-        //     align-items: flex-end;
-        // }
     }
 }

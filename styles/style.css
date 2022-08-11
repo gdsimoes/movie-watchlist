@@ -20,6 +20,7 @@
   --movie-plot: #6b7280;
   --movie-border: #e5e7eb;
   --read-color: #272727;
+  --add-movies-color: #363636;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -38,6 +39,7 @@
     --movie-plot: #a5a5a5;
     --movie-border: #2c2c2c;
     --read-color: white;
+    --add-movies-color: white;
   }
 }
 /*************
@@ -85,9 +87,14 @@ form button {
   color: var(--btn-color);
 }
 
-.movies-start h2 {
+#movies.movies-start h2 {
   color: var(--icon-film);
   font-size: 18px;
+}
+#movies.movies-start a {
+  color: var(--add-movies-color);
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .movie {
@@ -234,14 +241,24 @@ main {
 }
 
 #movies.movies-start {
-  width: 320px;
+  width: 400px;
   height: 80%;
   text-align: center;
   justify-content: center;
 }
+#movies.movies-start svg {
+  order: -1;
+}
 #movies.movies-start h2 {
   margin-top: 8.75px;
-  order: 1;
+}
+#movies.movies-start a {
+  text-decoration: none;
+}
+#movies.movies-start a svg {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
 }
 
 .movie {
