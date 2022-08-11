@@ -233,7 +233,6 @@ main {
   justify-content: flex-start;
   align-items: center;
   width: 461px;
-  min-height: 531px;
 }
 #movies .icon-film {
   width: 70px;
@@ -271,6 +270,8 @@ main {
   flex-shrink: 0;
   flex-grow: 1;
   border-bottom: 1.5px solid var(--movie-border);
+  opacity: 1;
+  transition: opacity 250ms;
 }
 .movie h1,
 .movie p {

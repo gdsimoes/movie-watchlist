@@ -283,7 +283,7 @@ main {
     align-items: center;
 
     width: 461px;
-    min-height: 531px;
+    // min-height: 531px;
 
     .icon-film {
         width: 70px;
@@ -328,6 +328,10 @@ main {
     flex-grow: 1;
 
     border-bottom: 1.5px solid var(--movie-border);
+
+    // Fade-out animation
+    opacity: 1;
+    transition: opacity 250ms;
 
     h1,
     p {

@@ -1,6 +1,14 @@
-import { apikey, baseUrl } from "./api.js";
+import {
+    apikey,
+    baseUrl,
+    moviesSection,
+    listOfMovies,
+    watchlistInitial,
+    removeMovie,
+    updateLocalStorage,
+} from "./api.js";
 
-const moviesSection = document.querySelector("#movies");
+// const moviesSection = document.querySelector("#movies");
 const standardHeight = 61;
 
 function readBtnHandler(event) {
@@ -53,30 +61,28 @@ async function createMovieArticle(imdbID, page) {
     const article = document.createElement("article");
     article.classList.add("movie");
     article.innerHTML = `
-<img src="${Poster}" alt="Movie poster" />
-<div class="info">
-    <div class="title">
-        <h1>${Title}</h1>
-        <svg>
-            <use xlink:href="images/icons.svg#star"></use>
-        </svg>
-        ${Value.slice(0, Value.lastIndexOf("/"))}
-    </div>
-    <div class="details">
-        <p>${Runtime}</p>
-        <p>${Genre}</p>
-        <button>
-            <svg>
-                <use xlink:href="images/icons.svg#${iconID}"></use>
-            </svg>
-            ${buttonText}
-        </button>
-    </div>
-    <p class="plot"><span>${Plot}</span></p>
-</div>
-
-
-`;
+        <img src="${Poster}" alt="Movie poster" />
+        <div class="info">
+            <div class="title">
+                <h1>${Title}</h1>
+                <svg>
+                    <use xlink:href="images/icons.svg#star"></use>
+                </svg>
+                ${Value.slice(0, Value.lastIndexOf("/"))}
+            </div>
+            <div class="details">
+                <p>${Runtime}</p>
+                <p>${Genre}</p>
+                <button>
+                    <svg>
+                        <use xlink:href="images/icons.svg#${iconID}"></use>
+                    </svg>
+                    ${buttonText}
+                </button>
+            </div>
+            <p class="plot"><span>${Plot}</span></p>
+        </div>
+        `;
 
     moviesSection.append(article);
 
@@ -97,15 +103,11 @@ async function createMovieArticle(imdbID, page) {
         .querySelector(".details > button")
         .addEventListener("click", (event) => {
             if (page === "index") {
-                const listOfMovies =
-                    JSON.parse(localStorage.getItem("listOfMovies")) ?? [];
-                listOfMovies.push(imdbID);
-                localStorage.setItem(
-                    "listOfMovies",
-                    JSON.stringify(listOfMovies)
-                );
+                listOfMovies.add(imdbID);
+                updateLocalStorage(listOfMovies);
             } else {
-                console.log("remove!");
+                const movie = event.currentTarget.closest(".movie");
+                removeMovie(imdbID, movie);
             }
         });
 }
