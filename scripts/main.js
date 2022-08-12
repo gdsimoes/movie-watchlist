@@ -8,7 +8,8 @@ const moviesSection = document.querySelector("#movies");
 async function search(event) {
     event.preventDefault();
 
-    const s = input.value;
+    // Unfortunately, mobile browsers sometimes add whitespace and we need to handle that
+    const s = input.value.trim();
     if (s === "") return;
 
     const url = `${baseUrl}?apikey=${apikey}&s=${s}&type=movie`;
