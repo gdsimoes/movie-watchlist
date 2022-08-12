@@ -103,6 +103,14 @@ async function createMovieArticle(imdbID, page) {
         .querySelector(".details > button")
         .addEventListener("click", (event) => {
             if (page === "index") {
+                event.currentTarget.style.opacity = 0;
+                setTimeout(
+                    (elem) => {
+                        elem.style.opacity = 1;
+                    },
+                    150,
+                    event.currentTarget
+                );
                 listOfMovies.add(imdbID);
                 updateLocalStorage(listOfMovies);
             } else {

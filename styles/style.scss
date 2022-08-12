@@ -348,6 +348,8 @@ main {
         color: var(--icon-change);
         border: none;
         cursor: pointer;
+        transition: opacity 150ms;
+        opacity: 1;
     }
 
     img {
