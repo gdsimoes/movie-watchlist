@@ -305,11 +305,20 @@ main {
   align-items: flex-start;
 }
 .movie .info .details {
-  width: 281px;
+  min-width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 8px;
+}
+.movie .info .details p {
+  flex-grow: 1;
+}
+.movie .info .details button {
+  width: 80px;
+  white-space: nowrap;
+  text-align: start;
+  flex-grow: 3;
 }
 .movie .info .details svg {
   width: 16px;

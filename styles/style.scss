@@ -370,11 +370,23 @@ main {
         align-items: flex-start;
 
         .details {
-            width: 281px;
+            // width: 281px;
+            min-width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 8px;
+
+            p {
+                flex-grow: 1;
+            }
+
+            button {
+                width: 80px;
+                white-space: nowrap;
+                text-align: start;
+                flex-grow: 3;
+            }
 
             svg {
                 width: 16px;
