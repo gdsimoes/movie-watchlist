@@ -287,8 +287,26 @@ main {
   color: var(--icon-change);
   border: none;
   cursor: pointer;
-  transition: opacity 150ms;
+  position: relative;
+}
+.movie button::after {
+  content: "Added!";
+  display: block;
+  border: 2px solid var(--icon-change);
+  border-radius: 10px;
+  background-color: var(--main-bg);
+  color: var(--icon-change);
+  position: absolute;
+  padding: 3px 6px;
+  left: 40px;
+  top: 0;
+  transform: translate(-50%);
+  transition: opacity 250ms, transform 250ms;
+  opacity: 0;
+}
+.movie button.clicked::after {
   opacity: 1;
+  transform: translate(-50%, -120%);
 }
 .movie img {
   width: 99px;

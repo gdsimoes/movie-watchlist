@@ -103,12 +103,12 @@ async function createMovieArticle(imdbID, page) {
         .querySelector(".details > button")
         .addEventListener("click", (event) => {
             if (page === "index") {
-                event.currentTarget.style.opacity = 0;
+                event.currentTarget.classList.add("clicked");
                 setTimeout(
                     (elem) => {
-                        elem.style.opacity = 1;
+                        elem.classList.remove("clicked");
                     },
-                    150,
+                    1000,
                     event.currentTarget
                 );
                 listOfMovies.add(imdbID);
