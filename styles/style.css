@@ -304,6 +304,7 @@ main {
   transition-property: opacity, transform;
   transition-duration: 250ms;
   transition-timing-function: ease-out;
+  will-change: transform, opacity;
   opacity: 0;
 }
 .movie button.clicked::after {

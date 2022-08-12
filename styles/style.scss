@@ -368,12 +368,15 @@ main {
         left: 40px;
         top: 0;
         transform: translate(-50%);
-        // bottom: calc(100% + 8px);
 
+        // We can't use the shorthand because of iOS Safari
         transition-property: opacity, transform;
         transition-duration: 250ms;
         transition-timing-function: ease-out;
-        // transition: opacity 250ms, transform 250ms;
+
+        // Remove flicker in iOS Safari
+        will-change: transform, opacity;
+
         opacity: 0;
     }
 
