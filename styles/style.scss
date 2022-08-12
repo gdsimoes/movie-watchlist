@@ -370,7 +370,10 @@ main {
         transform: translate(-50%);
         // bottom: calc(100% + 8px);
 
-        transition: opacity 250ms, transform 250ms;
+        transition-property: opacity, transform;
+        transition-duration: 250ms;
+        transition-timing-function: ease-out;
+        // transition: opacity 250ms, transform 250ms;
         opacity: 0;
     }
 

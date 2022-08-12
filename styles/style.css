@@ -301,7 +301,9 @@ main {
   left: 40px;
   top: 0;
   transform: translate(-50%);
-  transition: opacity 250ms, transform 250ms;
+  transition-property: opacity, transform;
+  transition-duration: 250ms;
+  transition-timing-function: ease-out;
   opacity: 0;
 }
 .movie button.clicked::after {
