@@ -21,6 +21,7 @@ $header-bg: #0e0e0e;
     --btn-color: #374151;
     --btn-bg: #f9fafb;
     --search-color: #6b7280;
+    --movies-h2: #dfdddd;
     --movie-h1: black;
     --movie-color: #111827;
     --movie-plot: #6b7280;
@@ -42,6 +43,7 @@ $header-bg: #0e0e0e;
         --btn-color: white;
         --btn-bg: #4b4b4b;
         --search-color: #a5a5a5;
+        --movies-h2: #787878;
         --movie-h1: white;
         --movie-color: white;
         --movie-plot: #a5a5a5;
@@ -108,8 +110,11 @@ form {
 
 #movies.movies-start {
     h2 {
-        color: var(--icon-film);
         font-size: 18px;
+        color: var(--movies-h2);
+    }
+    .initial-h2 {
+        color: var(--icon-film);
     }
 
     a {
@@ -340,6 +345,7 @@ main {
 
     button {
         background-color: transparent;
+        color: var(--icon-change);
         border: none;
         cursor: pointer;
     }
