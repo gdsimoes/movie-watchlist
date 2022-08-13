@@ -226,7 +226,7 @@ main {
 .movies-wrapper {
   width: 100%;
   height: 100%;
-  overflow: scroll;
+  overflow: auto;
   display: flex;
   justify-content: center;
   align-items: flex-start;

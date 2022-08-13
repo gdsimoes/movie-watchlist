@@ -95,6 +95,7 @@ async function createMovieArticle(imdbID, page) {
         button.addEventListener("click", readBtnHandler);
 
         plot.append(button);
+        // Run the event to make sure we start with the text cropped
         button.click();
     }
 
