@@ -177,6 +177,7 @@ body {
 
 .header-wrapper::before {
     content: "";
+    // Image by Andre Tan: https://unsplash.com/photos/THJJRUhNlEc
     background-image: url(../images/bg-small.jpg);
     background-size: cover;
     background-position: 0 -158px;
